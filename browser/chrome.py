@@ -1,7 +1,7 @@
-from driver_utils import install_chrome, ChromeDriverManager, get_chrome_version
 from selenium.webdriver.support.wait import WebDriverWait
 from telnetlib import EC
-from web_elements import CustomWebElement
+from .driver_utils import install_chrome, ChromeDriverManager, get_chrome_version
+from .web_elements import CustomWebElement
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
