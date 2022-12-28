@@ -8,7 +8,7 @@ version = "1.0.2"
 authors = [
     { name="OnameDohe", email="enrique.crespo.debenito@gmail.com" },
 ]
-description = "This packages crates a simple way to work with, Chrome and Firefox Browsers. More info in  https://ibott.io/lesson/"
+description = "This packages crates a simple way to work with, Chrome and Firefox Browsers. More info in https://ibott.io/academy/"
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.7"
