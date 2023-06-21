@@ -1,5 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from telnetlib import EC
+from selenium.webdriver.support import expected_conditions as EC
 from .driver_utils import install_chrome, ChromeDriverManager, get_chrome_version
 from .web_elements import CustomWebElement
 from selenium.webdriver import Chrome
