@@ -2,7 +2,7 @@ import pickle
 import time
 import warnings
 import os
-from telnetlib import EC
+from selenium.webdriver.support import expected_conditions as EC
 from web_elements import CustomWebElement
 from selenium import webdriver
 from selenium.webdriver import Firefox, FirefoxProfile
