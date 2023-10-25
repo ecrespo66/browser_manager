@@ -1,14 +1,14 @@
 [build-system]
-requires = ["hatchling", "selenium"]
+requires = ["hatchling", "selenium","webdriver-manager"]
 build-backend = "hatchling.build"
 
 [project]
 name = "ibott_browser_manager"
-version = "1.0.4"
+version = "1.0.7"
 authors = [
     { name="OnameDohe", email="enrique.crespo.debenito@gmail.com" },
 ]
-description = "This packages crates a simple way to work with, Chrome and Firefox Browsers. More info in https://ibott.io/academy/"
+description = "This packages crates a simple way to work with, Chrome and Firefox Browsers."
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.7"

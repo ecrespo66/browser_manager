@@ -1,6 +1,8 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .driver_utils import install_chrome, ChromeDriverManager, get_chrome_version
+from .driver_utils import get_chrome_version
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 from .web_elements import CustomWebElement
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
@@ -52,25 +54,28 @@ class ChromeBrowser(Chrome):
 
     def __init__(self, driver_path=None, undetectable=False):
         if not driver_path:
-            self.driver = install_chrome(os.path.dirname(__file__) + '/drivers')
+            self.driver = ChromeDriverManager().install()
+            #install_chrome(os.path.dirname(__file__) + '/drivers')
         else:
             self.driver = driver_path
         self.options = Options()
         self.undetectable = undetectable
         self.chrome_version = get_chrome_version()
 
-    def open(self):
+    def open(self, url=None):
         """
         This method opens Chrome browser to start the navigation.
         Set Custom options before using this method.
         """
         if self.undetectable:
-            ChromeDriverManager(self.driver, self.chrome_version).install()
             self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
             self.options.add_experimental_option('useAutomationExtension', False)
         else:
-            warnings.warn("You are using a browser that is  detectable by antispam systems.")
-        super().__init__(self.driver, options=self.options)
+            warnings.warn("You are using a browser that could be detectable by antispam systems.")
+        super().__init__(service=ChromeService(self.driver), options=self.options)
+
+        if url is not None:
+            self.get(url)
 
     def ignore_images(self):
         """
