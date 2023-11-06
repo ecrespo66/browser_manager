@@ -13,6 +13,7 @@ import zipfile
 import platform as pf
 import json
 from typing import AnyStr, Optional
+import shutil
 logger = logging.getLogger(__name__)
 
 def get_chromedriver_filename():
